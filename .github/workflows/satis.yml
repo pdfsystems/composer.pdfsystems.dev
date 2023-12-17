@@ -1,0 +1,63 @@
+name: Publish Satis Repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository_url:
+        required: false
+        description: URL of repository to update
+      verbosity:
+        type: choice
+        description: Verbose Level
+        options: 
+        - normal
+        - verbose
+        - very_verbose
+      skip_cache:
+        type: boolean
+        description: Do you want to skip saved cache?
+  
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+  AWS_BUCKET: ${{ vars.AWS_BUCKET }}
+  AWS_ENDPOINT: ${{ vars.AWS_ENDPOINT }}
+  COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{secrets.COMPOSER_TOKEN}}"} }'
+  
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Configure composer auth
+      run: composer config -g github-oauth.github.com ${{secrets.COMPOSER_TOKEN}}
+
+    - name: Satis Cache
+      uses: actions/cache@v3
+      if: inputs.skip_cache == false
+      with:
+        path: satis-cache
+        key: satis-${{ runner.os }}-${{ github.run_id }}
+        restore-keys: satis-${{ runner.os }}
+        
+    - name: Build Satis Repo
+      run: |
+        docker run \
+          --volume "${PWD}/satis.json:/usr/src/satis/satis.json" \
+          --volume "${PWD}/satis-cache/:/usr/src/satis/satis-cache/" \
+          --volume "${COMPOSER_HOME:-$HOME/.composer}:/root/.composer/" \
+          --env AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
+          --env AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
+          --env AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} \
+          --env AWS_BUCKET=${AWS_BUCKET} \
+          --env AWS_ENDPOINT=${AWS_ENDPOINT} \
+          ghcr.io/kduma-oss/s3-satis:latest build \
+          ${{ inputs.verbosity == 'verbose' && '-v' || '' }} \
+          ${{ inputs.verbosity == 'very_verbose' && '-vvv' || '' }} \
+          ${{ inputs.skip_cache == false && '--set-extension=cache:path=/usr/src/satis/satis-cache/' || '--set-extension=cache:enabled=false' }} \
+          ${{ inputs.repository_url != '' && format('--repository-url="{0}"', inputs.repository_url) || '' }}
