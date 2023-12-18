@@ -6,6 +6,8 @@ compatibility_date = "2023-12-06"
 PUBLIC_ACCESS_TO_INDEX = true
 PUBLIC_ACCESS_TO_JSON = false
 CHECK_FILE_RESTRICTIONS = true
+STORE_PASSWORDS_HASHED = true
+ENABLE_USER_ENDPOINT = true
 
 [[routes]]
 pattern = "composer.duma.dev"
