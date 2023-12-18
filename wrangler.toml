@@ -1,0 +1,20 @@
+name = "composer-oss-worker"
+main = "worker/src/index.ts"
+compatibility_date = "2023-12-06"
+
+[vars]
+PUBLIC_ACCESS_TO_INDEX = true
+PUBLIC_ACCESS_TO_JSON = false
+CHECK_FILE_RESTRICTIONS = true
+
+[[routes]]
+pattern = "composer.duma.dev"
+custom_domain = true
+
+[[kv_namespaces]]
+binding = "AUTH"
+id = "5300c5abb84d4290935e3df6eb9cae4c" # composer-oss-auth
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "composer-oss"
