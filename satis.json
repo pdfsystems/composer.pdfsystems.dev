@@ -39,7 +39,10 @@
         { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-dotenv-filler" },
         { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-cron" },
         { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-eloquent-guidable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-CoinHive-api" }
+        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-CoinHive-api" },
+
+        
+        { "type": "vcs", "url": "https://github.com/kduma-archive/test-ci-git-split-library" }
     ],
 
     "abandoned": {
