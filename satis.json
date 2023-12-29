@@ -16,8 +16,8 @@
         { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-polish-validator-rules" },
         { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-eloquent-uuidable" },
         { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-passphrase-generator" },
+        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-eloquent-snowflakeable" },
         { "type": "vcs", "url": "https://github.com/kduma-OSS/laravel-soap-server" },
-
 
         { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-bulk-generator" },
         { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-pdf-imposition" },
