@@ -11,13 +11,13 @@ STORE_PASSWORDS_HASHED = true
 ENABLE_USER_ENDPOINT = true
 
 [[routes]]
-pattern = "composer.duma.dev"
+pattern = "composer.pdfsystems.dev"
 custom_domain = true
 
 [[kv_namespaces]]
 binding = "AUTH"
-id = "5300c5abb84d4290935e3df6eb9cae4c" # composer-oss-auth
+id = "58c7fcd966b246c5bac72fca8888e044"
 
 [[r2_buckets]]
 binding = "R2_BUCKET"
-bucket_name = "composer-oss"
+bucket_name = "pdf-composer"
