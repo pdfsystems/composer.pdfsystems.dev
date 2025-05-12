@@ -1,57 +1,15 @@
 {
-    "name": "kduma/composer.duma.dev",
+    "name": "pdfsystems/composer.pdfsystems.dev",
 
-    "homepage": "https://composer.duma.dev",
+    "homepage": "https://composer.pdfsystems.dev",
 
     "repositories": [
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-eloquent-ulidable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-emSzmal-api" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-eloquent-sluggable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-eloquent-encryptable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-content-negotiable-responses" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-eloquent-tokenable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-SMS" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-SMS-Driver-SerwerSMS" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-SMS-Driver-JustSend" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-polish-validator-rules" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-eloquent-uuidable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/L5-passphrase-generator" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-eloquent-snowflakeable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/laravel-soap-server" },
-
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-bulk-generator" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-pdf-imposition" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-file-hasher" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-signed-document" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/PHP-LPD" },
-
-
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/CLI-comparator" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/CLI-pdf-scan-splitter" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/CLI-s3-satis" },
-
-
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/WebPrint-Service" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/WebPrint-Client" },
-
-
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-permissions" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-dotenv-filler" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-cron" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-eloquent-guidable" },
-        { "type": "vcs", "url": "https://github.com/kduma-OSS/LV-CoinHive-api" },
-
-        
-        { "type": "vcs", "url": "https://github.com/kduma-archive/test-ci-git-split-library" }
+        { "type": "vcs", "url": "https://github.com/pdf-systems-inc/laravel-shipping.git" },
+        { "type": "vcs", "url": "https://github.com/pdf-systems-inc/web-distribution-sdk.git" },
+        { "type": "vcs", "url": "https://github.com/pdf-systems-inc/applied-textiles-sdk.git" },
+        { "type": "vcs", "url": "https://github.com/pdf-systems-inc/shipping-integration-sdk.git" },
+        { "type": "vcs", "url": "https://github.com/pdfsystems/order-track-sdk.git" }
     ],
-
-    "abandoned": {
-        "kduma/cron": true,
-        "kduma/dotenv-filler": true,
-        "kduma/permissions": true,
-        "kduma/coinhive-api": true,
-        "kduma/eloquent-guidable": "kduma/eloquent-uuidable"
-    },
 
     "require-all": true,
 
